@@ -1,0 +1,7 @@
+<!-- <h1 th:text="${'Error: ' + error['status']}"></h1> -->
+<h1 th:if="${!#strings.isEmpty(error['status'])}" th:text="${'Error: ' + error['status']}"></h1>
+<br>
+<h1 th:if="${!#strings.isEmpty(error['message'])}" th:text="${'Message: ' + error['message']}"></h1>
+<br>
+<h1 th:if="${!#strings.isEmpty(error['exception'])}" th:text="${'Exception: ' + error['exception']}"></h1>
+<a th:href="@{/redirect}">Voltar</a>
