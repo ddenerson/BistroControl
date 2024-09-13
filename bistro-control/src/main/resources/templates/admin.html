@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <div class="container-fluid vh-100 px-4 text-bg-warning text-center">
+        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" style="width: 150px;"
+  alt="Avatar" />
+        <h1 th:text="${'Bem vindo(a), ' + #authentication.getPrincipal().getName() + '!'}"></h1>
+        <h1>Tela de controle de reservas em desenvolvimento...</h1>
+        <a th:href="@{/logout}">Sair</a>
+    </div>
+    <script th:src="@{/css/bootstrap.min.css}"></script>
+</body>
+</html>
