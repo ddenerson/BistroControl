@@ -7,10 +7,10 @@
 
 ## Descrição :
 
- Um sistema onde clientes podem fazer reservas em restaurantes em paralelo o donoa de restaurante podem fazer gestão de mesas e horários. 
+ Um sistema onde usuario final pode fazer reservas em restaurantes, e o restaurante pode fazer gestão de mesas e horários. 
    
 ## Funcionalidades :   
 
-- Cadastro de clientes   
+- Cadastro de clientes e Restaurante 
 - Reserva de mesas com data, hora e número de pessoas 
 - Gestão de disponibilidade de mesas.   
