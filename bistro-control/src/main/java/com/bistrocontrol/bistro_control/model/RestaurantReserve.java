@@ -1,6 +1,10 @@
 package com.bistrocontrol.bistro_control.model;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.Date;
+
+import org.hibernate.validator.internal.util.stereotypes.Lazy;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -20,28 +24,38 @@ public class RestaurantReserve {
     @Column(name = "id")
     private Long id;
 
+    @Lazy
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "restaurant_id")
+    @JoinColumn(name = "restaurant_table_id")
     private RestaurantTable restaurantTable;
 
     @Column(name = "reserve_date")
-    private LocalDateTime reserveDate;
+    private LocalDate reserveDate;
 
-    public RestaurantReserve(Long id, User user, RestaurantTable restaurantTable, LocalDateTime reserveDate) {
+    @Column(name = "reserve_time")
+    private LocalTime reserveTime;
+
+    private RestaurantReserve() {
+    }
+
+    public RestaurantReserve(Long id, User user, RestaurantTable restaurantTable, LocalDate reserveDate,
+            LocalTime reserveTime) {
         this.id = id;
         this.user = user;
         this.restaurantTable = restaurantTable;
         this.reserveDate = reserveDate;
+        this.reserveTime = reserveTime;
     }
 
-    public RestaurantReserve(User user, RestaurantTable restaurantTable, LocalDateTime reserveDate) {
+    public RestaurantReserve(User user, RestaurantTable restaurantTable, LocalDate reserveDate, LocalTime reserveTime) {
         this.user = user;
         this.restaurantTable = restaurantTable;
         this.reserveDate = reserveDate;
+        this.reserveTime = reserveTime;
     }
 
     public Long getId() {
@@ -67,13 +81,21 @@ public class RestaurantReserve {
     public void setRestaurantTable(RestaurantTable restaurantTable) {
         this.restaurantTable = restaurantTable;
     }
-
-    public LocalDateTime getReserveDate() {
+    
+    public LocalDate getReserveDate() {
         return reserveDate;
     }
 
-    public void setReserveDate(LocalDateTime reserveDate) {
+    public void setReserveDate(LocalDate reserveDate) {
         this.reserveDate = reserveDate;
+    }
+
+    public LocalTime getReserveTime() {
+        return reserveTime;
+    }
+
+    public void setReserveTime(LocalTime reserveTime) {
+        this.reserveTime = reserveTime;
     }
 
     @Override
@@ -104,6 +126,6 @@ public class RestaurantReserve {
     @Override
     public String toString() {
         return "RestaurantReserve [id=" + id + ", user=" + user + ", restaurantTable=" + restaurantTable
-                + ", reserveDate=" + reserveDate + "]";
+                + ", reserveDate=" + reserveDate + ", reserveTime=" + reserveTime + "]";
     }
 }

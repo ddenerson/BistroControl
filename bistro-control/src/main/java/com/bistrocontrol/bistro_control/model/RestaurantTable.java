@@ -18,6 +18,9 @@ public class RestaurantTable {
     @Column(name = "seats")
     private int seats;
 
+    private RestaurantTable() {
+    }
+
     public RestaurantTable(Long id, int seats) {
         this.id = id;
         this.seats = seats;

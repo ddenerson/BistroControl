@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle da Reserva</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <div class="container-fluid vh-100 px-4 text-bg-warning text-center">
+        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" style="width: 150px;"
+  alt="Avatar" />
+        <h1 th:text="${'Bem vindo(a), ' + #authentication?.getPrincipal()?.getName() + '!'}"></h1>
+        <a th:href="@{/logout}">Sair</a>
+        <!-- container do formulario -->
+        <div class="d-flex flex-column justify-content-center">
+            <div class="alert alert-danger" role="alert" th:if="${message != null}" th:text="${message}"></div>
+            <div th:each="reserva: ${reservas}">
+                <a th:href="@{/cliente/cancelar-reserva/{id}(id=${reserva.id})}" class="bg-secondary mb-5 row">
+                    <div>
+                        <p>Mesa:</p>
+                        <p th:text="${reserva.restaurantTable.id}"></p>
+                        <p th:text="${reserva.restaurantTable.seats + ' lugares'}"></p> 
+                    </div>
+                    <div>
+                        <p>Reserva: </p>
+                        <p th:text="${reserva.id}"></p>
+                        <p>Data</p>
+                        <p th:text="${reserva.reserveDate}"></p>
+                        <p>Hora</p>
+                        <p th:text="${reserva.reserveTime}"></p>
+                    </div>
+                </a>
+            </div>
+            <a th:href="@{/cliente}">Voltar</a>
+        </div>
+    </div>
+    <script th:src="@{/css/bootstrap.min.css}"></script>
+</body>
+</html>

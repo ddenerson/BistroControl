@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/bistro-control.iml" filepath="$PROJECT_DIR$/.idea/bistro-control.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/BistroControl.iml" filepath="$PROJECT_DIR$/.idea/BistroControl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bistro-control/bistro-control.iml" filepath="$PROJECT_DIR$/bistro-control/bistro-control.iml" />
     </modules>
   </component>
 </project>

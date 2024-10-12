@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.bistrocontrol.bistro_control.model.RegisterUserForm;
+
 import com.bistrocontrol.bistro_control.repository.UserRepository;
 import com.bistrocontrol.bistro_control.service.UserService;
 
@@ -56,11 +57,6 @@ public class UserController {
     @GetMapping("/admin")
     public String showAdminPage() {
         return "admin";
-    }
-
-    @GetMapping("/cliente")
-    public String showClienteMainPage() {
-        return "cliente";
     }
 
     @GetMapping("/redirect")

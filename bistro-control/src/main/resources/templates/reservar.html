@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <div class="container-fluid vh-100 px-4 text-bg-warning text-center">
+        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" style="width: 150px;"
+  alt="Avatar" />
+        <h1 th:text="${'Bem vindo(a), ' + #authentication?.getPrincipal()?.getName() + '!'}"></h1>
+        <h1>Tela de seleção de mesa em desenvolvimento...</h1>
+        <a th:href="@{/logout}">Sair</a>
+        <!-- container do formulario -->
+         <div>
+            <!-- formulario-->
+            <form action="/cliente/reservar" th:object="${newReserveDto}" method="post">
+                <div class="row">
+                    <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('seats')}" th:errors="*{seats}"></div>
+                    <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('time')}" th:errors="*{time}"></div>
+                    <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('date')}" th:errors="*{date}"></div>
+                    <div class="alert alert-danger" role="alert" th:if="${error}" th:text="${error}"></div>
+                </div>
+
+                    <!-- tables radio -->
+                    <div class="image-radio-group d-inline-flex flex-row flex-wrap justify-content-around">
+                        <div class="mb-2">
+                            <input type="radio" id="seats1" name="seats" value="2" th:field="*{seats}">
+                            <label for="seats1">
+                                <img width="100" height="100" th:src="@{/images/table.png}" class="unchecked" alt="Option 1 Unchecked">
+                                <img width="100" height="100" th:src="@{/images/table.png}" class="checked" alt="Option 1 Checked">
+                            </label>
+                        </div>
+
+                        <div class="mb-2">
+                            <input type="radio" id="seats2" name="seats" value="4" th:field="*{seats}">
+                            <label for="seats2">
+                                <img width="100" height="100" th:src="@{/images/table.png}" class="unchecked" alt="Option 1 Unchecked">
+                                <img width="100" height="100" th:src="@{/images/table.png}" class="checked" alt="Option 1 Checked">
+                            </label>
+                        </div>
+
+                        <div class="mb-2">
+                            <input type="radio" id="seats3" name="seats" value="6" th:field="*{seats}">
+                            <label for="seats3">
+                                <img width="100" height="100" th:src="@{/images/table.png}" class="unchecked" alt="Option 1 Unchecked">
+                                <img width="100" height="100" th:src="@{/images/table.png}" class="checked" alt="Option 1 Checked">
+                            </label>
+                        </div>
+
+                        <div class="mb-2">
+                            <input type="radio" id="seats4" name="seats" value="8" th:field="*{seats}">
+                            <label for="seats4">
+                                <img width="100" height="100" th:src="@{/images/table.png}" class="unchecked" alt="Option 1 Unchecked">
+                                <img width="100" height="100" th:src="@{/images/table.png}" class="checked" alt="Option 1 Checked">
+                            </label>
+                        </div>
+
+                        <div class="mb-2">
+                            <input type="radio" id="seats5" name="seats" value="10" th:field="*{seats}">
+                            <label for="seats5">
+                                <img width="100" height="100" th:src="@{/images/table.png}" class="unchecked" alt="Option 1 Unchecked">
+                                <img width="100" height="100" th:src="@{/images/table.png}" class="checked" alt="Option 1 Checked">
+                            </label>
+                        </div>
+
+                        <div class="mb-2">
+                            <input type="radio" id="seats6" name="seats" value="12" th:field="*{seats}">
+                            <label for="seats6">
+                                <img width="100" height="100" th:src="@{/images/table.png}" class="unchecked" alt="Option 1 Unchecked">
+                                <img width="100" height="100" th:src="@{/images/table.png}" class="checked" alt="Option 1 Checked">
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- times radio -->
+                    <div class="times-radio-group d-inline-flex flex-row flex-wrap justify-content-around">
+                        <div class="mb-2">
+                            <input type="radio" id="time1" name="time" value="18:00" th:field="*{time}">
+                            <label for="time1">
+                                <span class="unchecked btn btn-light">18:00</span>
+                                <span class="checked btn btn-outline-light">18:00</span>
+                            </label>
+                        </div>
+
+                        <div class="mb-2">
+                            <input type="radio" id="time2" name="time"  value="18:30" th:field="*{time}">
+                            <label for="time2">
+                                <span class="unchecked btn btn-light">18:30</span>
+                                <span class="checked btn btn-outline-light">18:30</span>
+                            </label>
+                        </div>
+
+                        <div class="mb-2">
+                            <input type="radio" id="time3" name="time"  value="19:00" th:field="*{time}">
+                            <label for="time3">
+                                <span class="unchecked btn btn-light">19:00</span>
+                                <span class="checked btn btn-outline-light">19:00</span>
+                            </label>
+                        </div>
+
+                        <div class="mb-2">
+                            <input type="radio" id="time4" name="time"  value="19:30" th:field="*{time}">
+                            <label for="time4">
+                                <span class="unchecked btn btn-light">19:30</span>
+                                <span class="checked btn btn-outline-light">19:30</span>
+                            </label>
+                        </div>
+
+                        <div class="mb-2">
+                            <input type="radio" id="time5" name="time"  value="20:00" th:field="*{time}">
+                            <label for="time5">
+                                <span class="unchecked btn btn-light">20:00</span>
+                                <span class="checked btn btn-outline-light">20:00</span>
+                            </label>
+                        </div>
+
+                        <div class="mb-2">
+                            <input type="radio" id="time6" name="time"  value="20:30" th:field="*{time}">
+                            <label for="time6">
+                                <span class="unchecked btn btn-light">20:30</span>
+                                <span class="checked btn btn-outline-light">20:30</span>
+                            </label>
+                        </div>
+
+                        <div class="mb-2">
+                            <input type="radio" id="time2" name="time"  value="21:00" th:field="*{time}">
+                            <label for="time2">
+                                <span class="unchecked btn btn-light">21:00</span>
+                                <span class="checked btn btn-outline-light">21:00</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <input type="date" id="date" name="date" lang="pt-BR" th:field="*{date}"> 
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-success btn-lg" type="submit" th:text="${success != null} ? ${success} : 'Reservar'">Reservar</button>
+                    </div>
+            </form>
+         </div>
+         <a th:href="@{/cliente/controle-da-reserva}">Controle de Reservas</a>
+    </div>
+    <script th:src="@{/css/bootstrap.min.css}"></script>
+</body>
+</html>
