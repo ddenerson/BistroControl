@@ -36,5 +36,9 @@ public class MyUserPrincipal implements UserDetails{
 
     public String getName() {
         return this.user.getName();
-    }    
+    }
+    
+    public Long getId() {
+        return this.user.getId();
+    }
 }
