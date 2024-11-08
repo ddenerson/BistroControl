@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html th:replace="~{layout :: layout (~{::title}, ~{::main})}">
+<head>
+    <title>Consultar reservas - BistroControl</title>
+</head>
+<body>
+    <!-- Insira o código dentro da tag main pois este layout está importando partes do template nomeado "layout.html" 
+     e está configurado pra sobrescrever tudo que estiver dentro da tag main. 
+     As importações do css estão sendo feitas pelo template layout então não precisa se preocupar com importar coisas aqui. 
+     Caso queira fazer uma modificação global pode se fazer direto no template layout.html. 
+     Um exemplo é a inserção da classe dark dentro do body do template layout.html. Veja que efeito funciona nesta página mesmo não atribuindo a classe dark no body desta.-->
+    <main>
+
+        <section class="p-heading">
+            <figure class="p-heading__pic">
+                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" alt="">
+            </figure>
+            <div class="p-heading__info">
+                <h1 th:utext="${'<span>Bem vindo(a)</span>,' + #authentication.getPrincipal().getName() + '!'}"></h1>
+            </div>
+        </section>
+
+        <!-- menu -->
+        <div>
+            <ul>
+                <li>
+                    <a th:href="@{/admin}">Consulta Reserva</a>
+                </li>
+                <li>
+                    <a th:href="@{/logout}">Sair</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Mesas disponíveis/indisponíveis -->
+         <!-- Você pode testar as mudanças de cores alterando os horários no arquivo data.sql localizado em resources. 
+          No fim do arquivo estão as reservas que são inseridas no banco de dados. 
+          Você pode alterar para um horário proximo ao seu, respeitando o intervalo em minutos (00 ou 30).
+          Ex: 14:00, 14:30, 09:30, 15:00 -->
+        <div>
+            <th:block th:each="t: ${tables}">
+                <th:block th:switch="true">
+                    <!-- VERIFICA SE O STATUS DA MESA ESTÁ "DISPONÍVEL" -->
+                    <a th:case="${t.reserveId == null}">
+                        <!-- MUDA A COR DE ACORDO COM O STATUS. MUDE OS VALORES COR-VERDE/COR-VERMELHA POR UMA COR CSS VÁLIDA-->
+                        <div th:classappend="${t.status == 'Disponível'} ? COR-VERDE : COR-VERMELHA">
+                            <img th:src="@{/images/round-table.png}" width="72px" height="72px">
+                        </div>
+                    </a>
+
+                    <!-- VERIFICA SE O STATUS DA MESA ESTÁ "DISPONÍVEL", CASO ESTEJA SERÁ ADICIONADO UM LINK PARA ACESSAR OS DETALHES DA RESERVA-->
+                    <a th:case="${t.reserveId != null}" th:href="@{/admin/detalhes-da-reserva/{id}(id=${t.reserveId})}">
+                        <!-- MUDA A COR DE ACORDO COM O STATUS. MUDE OS VALORES COR-VERDE/COR-VERMELHA POR UMA COR CSS VÁLIDA-->
+                        <div th:classappend="${t.status == 'Disponível'} ?  COR-VERDE : COR-VERMELHA">
+                            <img th:src="@{/images/round-table.png}" width="72px" height="72px">
+                        </div>
+                    </a>
+                </th:block>    
+            </th:block>
+        </div>
+
+    </main>
+</body>
+</html>

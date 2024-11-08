@@ -8,16 +8,20 @@ public class ReservedTableStatus {
 
     private String status;
 
-    private ReservedTableStatus() {
+    private Long reserveId;
+
+    public ReservedTableStatus() {
         this.tableId = tableId;
         this.tableSeats = tableSeats;
         this.status = status;
+        this.reserveId = reserveId;
     }
 
-    public ReservedTableStatus(Long tableId, int tableSeats, String status) {
+    public ReservedTableStatus(Long tableId, int tableSeats, Long reserveId, String status) {
         this.tableId = tableId;
         this.tableSeats = tableSeats;
         this.status = status;
+        this.reserveId = reserveId;
     }
 
     public Long getTableId() {
@@ -43,6 +47,14 @@ public class ReservedTableStatus {
     public void setStatus(String status) {
         this.status = status;
     }
+    
+    public Long getReserveId() {
+        return reserveId;
+    }
+
+    public void setReserveId(Long reserveId) {
+        this.reserveId = reserveId;
+    }  
 
     @Override
     public int hashCode() {
@@ -80,7 +92,7 @@ public class ReservedTableStatus {
 
     @Override
     public String toString() {
-        return "ReservedTableStatus [tableId=" + tableId + ", tableSeats=" + tableSeats + ", status=" + status + "]";
+        return "ReservedTableStatus [tableId=" + tableId + ", tableSeats=" + tableSeats + ", status=" + status + ", reserveId=" + reserveId + "]";
     }
     
 }

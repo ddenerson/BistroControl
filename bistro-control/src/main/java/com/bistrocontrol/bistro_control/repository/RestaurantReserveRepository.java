@@ -16,6 +16,5 @@ public interface RestaurantReserveRepository extends CrudRepository<RestaurantRe
 
     List<RestaurantReserve> findByReserveDateAndReserveTime(LocalDate date, LocalTime time);
 
-    List<RestaurantReserve> findByUserId(Long id);
-  
+    List<RestaurantReserve> findByUserId(Long id);  
 }

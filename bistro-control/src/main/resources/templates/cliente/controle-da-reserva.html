@@ -38,7 +38,7 @@
                             <div>
                                 <p>Reserva: <span th:text="${reserva.id}"></span></p>
                                 
-                                <p>Data: <span th:text="${reserva.reserveDate}"></span></p>
+                                <p>Data: <span th:text="${#temporals.format(reserva.reserveDate, 'dd/MM/yyyy')}"></span></p>
                                 
                                 <p>Hora:  <span th:text="${reserva.reserveTime}"></span></p>
                                

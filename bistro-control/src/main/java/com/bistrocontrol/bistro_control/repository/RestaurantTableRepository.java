@@ -20,7 +20,7 @@ public interface RestaurantTableRepository extends JpaRepository<RestaurantTable
     " AND r.reserveDate = :reserveDate AND r.reserveTime = :reserveTime WHERE r.id IS NULL")
     List<RestaurantTable> findAvailableTables(@Param("reserveDate") LocalDate reserveDate, @Param("reserveTime") LocalTime reserveTime);
 
-    @Query("SELECT new com.bistrocontrol.bistro_control.model.ReservedTableStatus(rt.id, rt.seats, " +
+    @Query("SELECT new com.bistrocontrol.bistro_control.model.ReservedTableStatus(rt.id, rt.seats, r.id, " +
     "CASE WHEN r.id IS NOT NULL THEN 'Reservada' ELSE 'Disponível' END) " +
     "FROM RestaurantTable rt " +
     "LEFT JOIN RestaurantReserve r ON rt.id = r.restaurantTable.id " +
