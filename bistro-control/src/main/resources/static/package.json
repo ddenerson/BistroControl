@@ -1,0 +1,15 @@
+{
+  "name": "static",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass sass/:css -w --style=compressed --source-map",
+    "modules:sass": "sass sass/pages/:css/pages/ -w --style=compressed --source-map"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.80.6"
+  }
+}
