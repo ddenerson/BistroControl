@@ -56,72 +56,33 @@ values('6');
 INSERT INTO restaurant_table(seats)
 values('6');
 
+INSERT INTO restaurant_table(seats)
+values('8');
+INSERT INTO restaurant_table(seats)
+values('8');
+INSERT INTO restaurant_table(seats)
+values('8');
 
--- INSERT INTO restaurant_table(seats)
--- values('8');
--- INSERT INTO restaurant_table(seats)
--- values('8');
--- INSERT INTO restaurant_table(seats)
--- values('8');
+INSERT INTO restaurant_table(seats)
+values('10');
+INSERT INTO restaurant_table(seats)
+values('10');
+INSERT INTO restaurant_table(seats)
+values('10');
 
--- INSERT INTO restaurant_table(seats)
--- values('10');
--- INSERT INTO restaurant_table(seats)
--- values('10');
--- INSERT INTO restaurant_table(seats)
--- values('10');
-
--- INSERT INTO restaurant_table(seats)
--- values('12');
--- INSERT INTO restaurant_table(seats)
--- values('12');
--- INSERT INTO restaurant_table(seats)
--- values('12');
+INSERT INTO restaurant_table(seats)
+values('12');
+INSERT INTO restaurant_table(seats)
+values('12');
+INSERT INTO restaurant_table(seats)
+values('12');
 
 -- Reserve
 INSERT INTO reserve(reserve_time, reserve_date, restaurant_table_id, user_id)
-VALUES('18:00:00',CURRENT_DATE, 1, 2);
+VALUES('17:00:00',CURRENT_DATE, 1, 2);
 
 INSERT INTO reserve(reserve_time, reserve_date, restaurant_table_id, user_id)
-VALUES('18:00:00',CURRENT_DATE, 2, 2);
+VALUES('17:00:00',CURRENT_DATE, 2, 2);
 
 INSERT INTO reserve(reserve_time, reserve_date, restaurant_table_id, user_id)
-VALUES('18:00:00',CURRENT_DATE, 3, 2);
-
--- INSERT INTO reserve(reserve_time, reserve_date, restaurant_table_id, user_id)
--- VALUES('18:30:00','2024-09-23', 1, 2);
-
--- INSERT INTO reserve(reserve_time, reserve_date, restaurant_table_id, user_id)
--- VALUES('19:00:00','2024-09-23', 1, 2);
-
--- INSERT INTO reserve(reserve_time, reserve_date, restaurant_table_id, user_id)
--- VALUES('18:00:00','2024-09-23', 2, 3);
-
--- INSERT INTO reserve(reserve_time, reserve_date, restaurant_table_id, user_id)
--- VALUES('18:30:00','2024-09-23', 2, 2);
-
--- INSERT INTO reserve(reserve_time, reserve_date, restaurant_table_id, user_id)
--- VALUES('18:00:00','2024-09-23', 4, 4);
-
--- INSERT INTO reserve(reserve_time, reserve_date, restaurant_table_id, user_id)
--- VALUES('18:00:00','2024-09-23', 6, 5);
-
--- INSERT INTO reserve(reserve_time, reserve_date, restaurant_table_id, user_id)
--- VALUES('18:00:00','2024-09-23', 7, 6);
-
--- INSERT INTO reserve(reserve_time, reserve_date, restaurant_table_id, user_id)
--- VALUES('18:00:00','2024-09-23', 8, 6);
-
--- INSERT INTO reserve(reserve_time, reserve_date, restaurant_table_id, user_id)
--- VALUES('18:00:00','2024-09-23', 5, 6);
-
--- INSERT INTO reserve(reserve_time, reserve_date, restaurant_table_id, user_id)
--- VALUES('18:00:00','2024-09-23', 9, 7);
-
--- SELECT rt.id, rt.seats
--- FROM restaurant_table rt
--- LEFT JOIN reserve r
--- ON rt.id = r.restaurant_table_id
--- AND r.reserve_date = '2024-09-23'
--- AND r.reserve_time = '18:00'
--- WHERE r.id IS NULL;
+VALUES('17:30:00',CURRENT_DATE, 3, 2);

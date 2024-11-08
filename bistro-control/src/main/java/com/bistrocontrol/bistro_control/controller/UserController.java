@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.bistrocontrol.bistro_control.model.RegisterUserForm;
-
 import com.bistrocontrol.bistro_control.repository.UserRepository;
 import com.bistrocontrol.bistro_control.service.UserService;
 
@@ -44,19 +43,13 @@ public class UserController {
             return "/cadastro";
         }
         if (userRepository.findByEmail(registerUserForm.email()).isPresent()) {
-            result.rejectValue("email", "error.registerUserForm", "An account already exists for this email.");
-            System.out.println("Passou por aqui.");
+            result.rejectValue("email", "error.registerUserForm", "Já existe uma conta com este email.");
             return "/cadastro";
         }
         userService.register(registerUserForm);
         model.addAttribute("success", "Conta criada com sucesso. Você ja pode logar.");
 
         return "/cadastro"; 
-    }
-
-    @GetMapping("/admin")
-    public String showAdminPage() {
-        return "admin";
     }
 
     @GetMapping("/redirect")
