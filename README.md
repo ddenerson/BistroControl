@@ -14,3 +14,16 @@
 - Cadastro de clientes e Restaurante 
 - Reserva de mesas com data, hora e número de pessoas 
 - Gestão de disponibilidade de mesas.   
+
+## Usando :
+
+Tenha instalado o conjunto JDK (Java Development Kit).
+IDE (Integrated Developer Environment) - É o ambiente de desenvolvimento, onde vamos escrever os códigos.
+Extensão para o Sprint Boot
+
+### Considerações finais
+
+A escolha da IDE é um pouco pessoal, desde que instalada e configurada corretamente.
+
+
+
