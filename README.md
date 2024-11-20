@@ -7,7 +7,7 @@
 
 ## Descrição :
 
- Sistema onde usuario fara reservas, e o restaurantes a gestão. 
+ Sistema onde usuario fara reservas, e o restaurantes a gestão.
    
 ## Funcionalidades :   
 
