@@ -6,18 +6,17 @@
 
 
 ## Descrição :
-
- Sistema onde usuario fara reservas, e o restaurantes a gestão. 
+Sistema de reservas onde o usuário consegue reservar a sua própria mesa e o restaurante ficará responsável pela gestão das reservas.
    
 ## Funcionalidades :   
 
 - Cadastro de clientes e Restaurante 
-- Reserva de mesas com data, hora e número de pessoas 
-- Gestão de disponibilidade de mesas.   
-
+- Reserva de mesas com data, hora e quantidade de pessoas 
+- Gestão de disponibilidade de mesas.  
+- painel de gerencia
 ## Usando :
 
-- Tenha instalado o conjunto JDK (Java Development Kit).
+- Tenha instalado o conjunto JDK (Java Development Kit)
 
 - IDE (Integrated Developer Environment) - É o ambiente de desenvolvimento, onde vamos escrever os códigos.
 
