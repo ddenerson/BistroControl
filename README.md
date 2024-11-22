@@ -17,7 +17,7 @@
 
 ## Usando :
 
-- Tenha instalado o conjunto JDK (Java Development Kit).
+- Tenha instalado o conjunto JDK (Java Development Kit)
 
 - IDE (Integrated Developer Environment) - É o ambiente de desenvolvimento, onde vamos escrever os códigos.
 
