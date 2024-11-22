@@ -6,8 +6,7 @@
 
 
 ## Descrição :
-
- Sistema onde usuario fara reservas, e o restaurantes a gestão.
+Sistema de reservas onde o usuário consegue reservar a sua própria mesa e o restaurante ficará responsável pela gestão das reservas.
    
 ## Funcionalidades :   
 
