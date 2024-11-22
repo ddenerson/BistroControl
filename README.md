@@ -12,9 +12,9 @@
 ## Funcionalidades :   
 
 - Cadastro de clientes e Restaurante 
-- Reserva de mesas com data, hora e número de pessoas 
-- Gestão de disponibilidade de mesas.   
-
+- Reserva de mesas com data, hora e quantidade de pessoas 
+- Gestão de disponibilidade de mesas.  
+- painel de gerencia
 ## Usando :
 
 - Tenha instalado o conjunto JDK (Java Development Kit)
